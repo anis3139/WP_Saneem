@@ -108,7 +108,7 @@ function saneem_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'saneem' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="footer-heading mb-4 list-unstyled widget-title">',
+		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
 		'after_title'   => '</h3>',
 	) );   
     
