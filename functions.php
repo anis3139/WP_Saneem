@@ -1,6 +1,7 @@
 <?php
 
 require_once( get_theme_file_path( "/widgets/social-icons-widget.php" ) );
+require_once( get_theme_file_path( "/assets/wp_bootstrap_navlist_walker/wp_bootstrap_navlist_walker.php" ) );
 
 
 
@@ -156,3 +157,14 @@ function saneem_assets(){
 	}
 }
 add_action('wp_enqueue_scripts','saneem_assets');
+
+
+
+function saneem_nav_class( $classes, $item) {
+ 
+    $classes[]="list-inline";
+ 
+    return $classes;
+}
+add_filter( 'nav_menu_css_class' , 'saneem_nav_class' , 10, 2 );
+

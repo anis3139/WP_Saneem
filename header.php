@@ -34,7 +34,9 @@
                             <?php
 		                          echo wp_nav_menu( array(
 		                          	'location' => 'primary',
-                                    'menu_class'=>'site-menu main-menu js-clone-nav mr-auto d-none d-lg-block'
+                                      'menu-id'=>'topmenu',
+                                    'menu_class'=>'site-menu main-menu js-clone-nav mr-auto d-none d-lg-block',
+                                      'walker'=>new WP_Bootstrap_Navwalker(),
 		                          ) );
 		                      ?>
 
