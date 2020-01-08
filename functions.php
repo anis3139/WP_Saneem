@@ -2,6 +2,19 @@
 
 require_once( get_theme_file_path( "/widgets/social-icons-widget.php" ) );
 require_once( get_theme_file_path( "/assets/wp_bootstrap_navlist_walker/wp_bootstrap_navlist_walker.php" ) );
+require_once( get_theme_file_path( "/lib/class-tgm-plugin-activation.php" ) );
+require_once( get_theme_file_path( "/inc/tgm.php" ) );
+require_once( get_theme_file_path( "/lib/csf/cs-framework.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/section.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/page.php" ) );
+
+
+define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
+define( 'CS_ACTIVE_METABOX', true ); // default true
+define( 'CS_ACTIVE_TAXONOMY', false ); // default true
+define( 'CS_ACTIVE_SHORTCODE', false ); // default true
+define( 'CS_ACTIVE_CUSTOMIZE', false ); // default true
+
 
 
 
@@ -162,9 +175,14 @@ add_action('wp_enqueue_scripts','saneem_assets');
 
 function saneem_nav_class( $classes, $item) {
  
-    $classes[]="list-inline";
+    $classes[]="list-inline text-decoration-none ";
  
     return $classes;
 }
 add_filter( 'nav_menu_css_class' , 'saneem_nav_class' , 10, 2 );
+
+function saneem_csf_init(){
+    CSFramework_metabox::instance(array());
+}
+add_action('init', 'saneem_csf_init');
 
