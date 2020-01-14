@@ -8,7 +8,7 @@ function saneem_section_type_metabox( $metaboxes ) {
         'priority'  => 'default',
         'sections'  => array(
             array(
-                'name'     => 'saneem-section-type-section-one',
+                'name'     => 'saneem-section-type-one',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
                     array(

@@ -3,34 +3,14 @@
  * Template Name: Landing Page
  */
 ?>
- 
- 
- 
- <?php get_header();?>
+<?php get_header();?>
 
- <div class="site-blocks-cover overlay" style="background-image: url(<?php echo get_template_directory_uri();?>/assets/images/hero_1.jpg);" data-aos="fade" id="home-section">
-     -
-     - <div class="container">
-         - <div class="row align-items-center justify-content-center">
-             -
-             -
-             - <div class="col-md-8 mt-lg-5 text-center">
-                 - <h1 class="text-uppercase mb-5" data-aos="fade-up">Create Your Dream</h1>
-                 -
-                 - <div data-aos="fade-up" data-aos-delay="100">
-                     - <a href="#contact-section" class="btn smoothscroll btn-primary mr-2 mb-2">Get In Touch</a>
-                     - </div>
-                 - </div>
+<?php 
+$section_id=280;
+get_template_part("section-templates/banner");
 
-         </div>
-     </div>
+?>
 
-     <a href="#about-section" class="mouse smoothscroll">
-         <span class="mouse-icon">
-             <span class="mouse-wheel"></span>
-         </span>
-     </a>
- </div>
 
 
  <div class="site-section cta-big-image" id="about-section">
@@ -807,4 +787,4 @@
      </div>
  </section>
 
-<?php get_footer();?>
+ <?php get_footer();?>
