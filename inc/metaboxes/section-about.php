@@ -27,21 +27,11 @@ function saneem_about_section_metabox($metaboxes){
                 'fields' => array(
                     array(
                         'id'    => 'about_image',
-                        'title'   => __( 'Banner Image', 'saneem' ),
+                        'title'   => __( 'About Image', 'saneem' ),
                         'type'    => 'image',
                         
                         ),
-                    array(
-                        'id'    => 'about_button_title',
-                        'title'   => __( 'Button Title', 'saneem' ),
-                        'type'    => 'text',
-                        
-                        ),
-                    array(
-                        'id'    => 'about_button_target',
-                        'title'   => __( 'Button Terget', 'saneem' ),
-                        'type'    => 'text',   
-                        ),
+                   
                     array(
                             'id'    => 'about_title',
                             'type'  => 'text',
@@ -52,21 +42,19 @@ function saneem_about_section_metabox($metaboxes){
                             'type'  => 'textarea',
                             'title' => __( 'About Description', 'saneem' ),
                           ),
-                    
-                    
+                     array(
+                        'id'    => 'about_button_title',
+                        'title'   => __( 'Button Title', 'saneem' ),
+                        'type'    => 'text',
+                        
+                        ),
                     array(
-                        'id'        => 'about_tag_list',
-                        'type'      => 'group',
-                        'title'     =>  __( 'About Tag List', 'saneem' ),
-                        'fields'    => array(
-                          array(
-                            'id'    => 'about_tag_text',
-                            'type'  => 'text',
-                            'title' => __( 'About Tag Text', 'saneem' ),
-                          ),
-
+                        'id'    => 'about_button_target',
+                        'title'   => __( 'Button Terget', 'saneem' ),
+                        'type'    => 'text',   
                         ),
-                        ),
+                    
+                 
                     ),
                 ),
             ),

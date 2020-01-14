@@ -3,7 +3,7 @@ global $section_id;
 $saneem_section_meta= get_post_meta($section_id,'saneem_banner_sections',true);
 $saneem_banner_image=get_template_directory_uri().'/assets/images/hero_1.jpg';
 if(isset($saneem_section_meta['banner_image'])){
-$saneem_banner_image=wp_get_attachment_image_src($saneem_section_meta['banner_image'],'full');
+$saneem_banner_image= wp_get_attachment_image_src($saneem_section_meta['banner_image'],'full');
 }
 
 

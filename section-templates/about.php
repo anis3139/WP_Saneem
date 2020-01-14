@@ -35,26 +35,6 @@ $saneem_section_description = $saneem_section->post_content;
 
 
                  </div>
-
-
-                <?php
-                 $saneem_about_tags= $saneem_section_meta['about_tag_text'];
-                 
-                 if($saneem_about_tags):
-                 ?>
-                 <div class="mb-4">
-                     <ul class="list-unstyled ul-check success">
-                         <li>
-                        <?php 
-                            foreach ($saneem_about_tags as $saneem_about_tag): 
-                        ?>
-                         </li>
-                         
-                         
-                        <?php endforeach; ?>
-                     </ul>
-                 </div>
-            <?php endif; ?>
                 
                 
                  <p><a href="<?php echo esc_url($saneem_section_meta['about_button_target']); ?>" class="smoothscroll btn btn-primary"> <?php echo esc_html($saneem_section_meta['about_button_title']); ?></a></p>
