@@ -21,177 +21,37 @@ $saneem_section_description = $saneem_section->post_content;
                  </p>
              </div>
          </div>
+         
+         <?php 
+         $saneem_teams= $saneem_section_meta['team'];
+         if($saneem_teams):
+         
+         ?>
+         
          <div class="row">
-
-
+            <?php 
+             foreach($saneem_teams as $saneem_team):
+             $saneem_members_image = wp_get_attachment_image_src( $saneem_team['member_image'], 'medium' );
+             ?>
              <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="">
                  <div class="team-member">
                      <figure>
                           <ul class="social">
-                             <li><a href="<?php echo esc_url($saneem_section_meta['facebook']); ?>"><span class="icon-facebook"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['twitter']); ?>"><span class="icon-twitter"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['github']); ?>"><span class="icon-github"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['instagram']); ?>"><span class="icon-instagram"></span></a></li>
+                             <li><a href="<?php echo esc_url($saneem_team['social_profiles']['facebook']); ?>"><span class="icon-facebook"></span></a></li>
+                             <li><a href="<?php echo esc_url($saneem_team['social_profiles']['twitter']); ?>"><span class="icon-twitter"></span></a></li>
+                             <li><a href="<?php echo esc_url($saneem_team['social_profiles']['github']); ?>"><span class="icon-github"></span></a></li>
+                             <li><a href="<?php echo esc_url($saneem_team['social_profiles']['instagram']); ?>"><span class="icon-instagram"></span></a></li>
                          </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_6.jpg" alt="Image" class="img-fluid">
+                         <img src="<?php echo esc_attr($saneem_members_image[0]);?>" alt="<?php echo esc_html($saneem_about['member_name']); ?>" class="img-fluid">
                      </figure>
                      <div class="p-3">
-                         <h3><?php echo esc_html($saneem_section_meta['member_name']); ?></h3>
-                         <span class="position"><?php echo esc_html($saneem_section_meta['member_designation']); ?></span>
+                         <h3><?php echo esc_html($saneem_team['member_name']); ?></h3>
+                         <span class="position"><?php echo esc_html($saneem_team['member_designation']); ?></span>
                      </div>
                  </div>
              </div>
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="<?php echo esc_url($saneem_section_meta['about_button_target']); ?>"><span class="icon-facebook"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['about_button_target']); ?>"><span class="icon-twitter"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['about_button_target']); ?>"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="<?php echo esc_url($saneem_section_meta['about_button_target']); ?>"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_6.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Dave Simpson</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_7.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Ben Thompson</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_8.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Kyla Stewart</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_1.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Kaiara Spencer</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_2.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Dave Simpson</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_3.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Ben Thompson</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-             <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-                 <div class="team-member">
-                     <figure>
-                         <ul class="social">
-                             <li><a href="#"><span class="icon-facebook"></span></a></li>
-                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                             <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                             <li><a href="#"><span class="icon-instagram"></span></a></li>
-                         </ul>
-                         <img src="<?php echo get_template_directory_uri();?>/assets/images/person_4.jpg" alt="Image" class="img-fluid">
-                     </figure>
-                     <div class="p-3">
-                         <h3>Chris Stewart</h3>
-                         <span class="position">Product Manager</span>
-                     </div>
-                 </div>
-             </div>
-
-
-
+             <?php endforeach; ?>
          </div>
+<?php endif; ?>
      </div>
  </section>

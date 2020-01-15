@@ -4,6 +4,8 @@ $saneem_section_meta        = get_post_meta( $section_id, 'saneem_about_sections
 $saneem_section             = get_post( $section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
+
+$saneem_about_image= wp_get_attachment_image_src($saneem_section_meta['about_image'],'full');
 ?>
 
     
@@ -20,7 +22,7 @@ $saneem_section_description = $saneem_section->post_content;
          <div class="row">
              <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
                  <figure class="circle-bg">
-                     <img src="<?php echo get_template_directory_uri();?>/assets/images/hero_1.jpg" alt="Image" class="img-fluid">
+                     <img src="<?php echo esc_url( $saneem_about_image[0]);?>" alt="Image" class="img-fluid">
                  </figure>
              </div>
              <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -31,9 +33,6 @@ $saneem_section_description = $saneem_section->post_content;
                      <p> 
                      <?php echo esc_html($saneem_section_meta['about_description']); ?>
                      </p>
-
-
-
                  </div>
                 
                 

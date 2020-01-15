@@ -5,7 +5,9 @@ function saneem_team_section_metabox($metaboxes){
     if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
         $section_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID'];
     }
-
+ if ( 'section' != get_post_type( $section_id ) ) {
+        return $metaboxes;
+    }
     $section_meta= get_post_meta($section_id,'saneem-section-type',true);
     $section_type= $section_meta['type'];
     
@@ -21,11 +23,16 @@ function saneem_team_section_metabox($metaboxes){
         'priority'  => 'default',
         'sections'  => array(
             array(
-                'id'     => 'saneem_team_section_one',
-                'name'  => '',
+                'name'  => 'saneem_team_section_one',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
-                
+                 array(
+                        'id'              => 'team',
+                        'type'            => 'group',
+                        'title'           => __( 'Team', 'saneem' ),
+                        'button_title'    => __( 'New Team Member', 'saneem' ),
+                        'accordion_title' => __( 'Add New Team Member', 'saneem' ),
+                        'fields'          => array(
                          
                          array(
                         'id'    => 'member_image',
@@ -44,6 +51,13 @@ function saneem_team_section_metabox($metaboxes){
                         'title'   => __( 'Members Designation', 'saneem' ),
                         'type'    => 'text',   
                         ),
+                    
+                    array(
+                                'id'        => 'social_profiles',
+                                'type'      => 'fieldset',
+                                'title'     => __( 'Social Profiles', 'saneem' ),
+                                'fields'    => array(
+
                     array(
                         'id'    => 'facebook',
                         'title'   => __( 'Facebook', 'saneem' ),
@@ -66,8 +80,11 @@ function saneem_team_section_metabox($metaboxes){
                         ),
                    
                     ),
+                    ),
                 ),
-        
+            ),
+        ),
+            ),
         ),  
     );
     
