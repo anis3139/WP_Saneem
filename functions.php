@@ -16,6 +16,7 @@ require_once( get_theme_file_path( "/inc/metaboxes/section-services.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-testimonials.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-faq.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-thinking.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/section-contact.php" ) );
 
 
 define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
@@ -166,14 +167,22 @@ function saneem_assets(){
     
 	wp_enqueue_script('bootstrap-js',get_theme_file_uri('/assets/js/bootstrap.min.js'),['jquery'],'default',true);
 	wp_enqueue_script('popper-js',get_theme_file_uri('/assets/js/popper.min.js'),['jquery'],'default',true);
-	wp_enqueue_script('carousel-js',get_theme_file_uri('/assets/js/owl.carousel.min.js'),['jquery'],time(),true);
-    wp_enqueue_script('countdown-js',get_theme_file_uri('/assets/js/jquery.countdown.min.js'),['jquery'],time(),true);
-    wp_enqueue_script('easing-js',get_theme_file_uri('/assets/js/jquery.easing.1.3.js'),['jquery'],time(),true);
+	wp_enqueue_script('carousel-js',get_theme_file_uri('/assets/js/owl.carousel.min.js'),['jquery'],VERSION,true);
+    wp_enqueue_script('countdown-js',get_theme_file_uri('/assets/js/jquery.countdown.min.js'),['jquery'],VERSION,true);
+    wp_enqueue_script('easing-js',get_theme_file_uri('/assets/js/jquery.easing.1.3.js'),['jquery'],VERSION,true);
     wp_enqueue_script('aos-js',get_theme_file_uri('/assets/js/aos.js'),['jquery'],VERSION,true);
-    wp_enqueue_script('fancybox-js',get_theme_file_uri('/assets/js/jquery.fancybox.min.js'),['jquery'],time(),true);
-    wp_enqueue_script('sticky-js',get_theme_file_uri('/assets/js/jquery.sticky.js'),['jquery'],time(),true);
-    wp_enqueue_script('pkgd-js',get_theme_file_uri('/assets/js/isotope.pkgd.min.js'),['jquery'],time(),true); wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],time(),true);
-
+    wp_enqueue_script('fancybox-js',get_theme_file_uri('/assets/js/jquery.fancybox.min.js'),['jquery'],VERSION,true);
+    wp_enqueue_script('sticky-js',get_theme_file_uri('/assets/js/jquery.sticky.js'),['jquery'],VERSION,true);
+    wp_enqueue_script('pkgd-js',get_theme_file_uri('/assets/js/isotope.pkgd.min.js'),['jquery'],VERSION,true); 
+    
+    wp_enqueue_script('main-js',get_theme_file_uri('/assets/js/main.js'),['jquery'],time(),true);
+    
+    if(is_page_template('page-templates/landing.php')){
+    wp_enqueue_script('contact-js',get_theme_file_uri('/assets/js/contact.js'),['jquery'],VERSION,true); 
+    $ajaxurl = admin_url( 'admin-ajax.php' );
+        wp_localize_script( 'contact-js', 'saneem_url', array( 'ajaxurl' => $ajaxurl ) );
+    
+    }
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -195,3 +204,24 @@ function saneem_csf_init(){
 }
 add_action('init', 'saneem_csf_init');
 
+
+
+function saneem_contact_email(){
+	if(check_ajax_referer('contact','cn')) {
+		$name    = isset( $_POST['name'] ) ? $_POST['name'] : '';
+		$email   = isset( $_POST['email'] ) ? $_POST['email'] : '';
+		$subject   = isset( $_POST['subject'] ) ? $_POST['subject'] : '';
+		$message = isset( $_POST['message'] ) ? $_POST['message'] : '';
+
+		$_message    = sprintf( "%s \nFrom: %s\nEmail: %s\nSubject: %s", $message, $name, $email, $subject );
+		$admin_email = get_option( 'admin_email' );
+
+		//postfix
+
+		wp_mail( $admin_email, __( 'Someone tried to contact you', 'saneem' ), $_message, "From: {$admin_email}\r\n" );
+		die( 'successful' );
+	}
+	die('error');
+}
+add_action('wp_ajax_contact','saneem_contact_email');
+add_action('wp_ajax_nopriv_contact','saneem_contact_email');

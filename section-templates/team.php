@@ -49,9 +49,11 @@ $saneem_section_description = $saneem_section->post_content;
                          <span class="position"><?php echo esc_html($saneem_team['member_designation']); ?></span>
                      </div>
                  </div>
+                 
              </div>
              <?php endforeach; ?>
          </div>
 <?php endif; ?>
      </div>
+      
  </section>

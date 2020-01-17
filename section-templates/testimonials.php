@@ -5,7 +5,8 @@ $saneem_section             = get_post( $section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 ?>
- <section class="site-section testimonial-wrap" id="testimonials-section" data-aos="fade">
+ <div class="saneem-custom-padding">
+    <section class="site-section testimonial-wrap" id="testimonials-section" data-aos="fade">
      <div class="container">
          <div class="row mb-5">
              <div class="col-12 text-center">
@@ -40,3 +41,4 @@ $saneem_section_description = $saneem_section->post_content;
      </div>
        
  </section>
+ </div>

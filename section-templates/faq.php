@@ -16,7 +16,7 @@ $saneem_section_description = $saneem_section->post_content;
          $saneem_faqs= $saneem_section_meta['faq'];
         if($saneem_faqs):
          ?>
-<div class="row">
+<div class="row saneem-custom-padding">
      <?php foreach ($saneem_faqs as $saneem_faq): ?>
     <div class="col-lg-6">
       
