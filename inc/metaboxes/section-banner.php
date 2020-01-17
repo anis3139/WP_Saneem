@@ -5,7 +5,9 @@ function saneem_banner_section_metabox($metaboxes){
     if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
         $section_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID'];
     }
-
+ if ( 'section' != get_post_type( $section_id ) ) {
+        return $metaboxes;
+    }
     $section_meta= get_post_meta($section_id,'saneem-section-type',true);
     $section_type= $section_meta['type'];
     

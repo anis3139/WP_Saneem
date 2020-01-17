@@ -35,20 +35,23 @@ $saneem_section_description = $saneem_section->post_content;
                 <?php endforeach; ?>
             </div>
         </div>
-        <?php 
+      
+        <div id="posts" class="row no-gutter">
+             <?php 
             foreach($saneem_gallery_items as $saneem_gallery_item):
+            $saneem_item_class = str_replace( ",", " ", $saneem_gallery_item['category'] );
             $saneem_portfolio_image_id = $saneem_gallery_item['portfolio_image'];
             $saneem_portfolio_thumbnail = wp_get_attachment_image_src($saneem_portfolio_image_id,'medium');
             $saneem_portfolio_large = wp_get_attachment_image_src($saneem_portfolio_image_id,'large');
             ?>
-        <div id="posts" class="row no-gutter">
-            <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
+            <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4 <?php echo esc_attr( $saneem_item_class ); ?>">
                 <a href="<?php echo esc_url($saneem_portfolio_large[0]); ?>" class="item-wrap fancybox" data-fancybox="gallery2">
                     <span class="icon-search2"></span>
                     <img class="img-fluid" src="<?php echo esc_url($saneem_portfolio_thumbnail[0]); ?>">
                 </a>
             </div>
+            <?php endforeach;?>
         </div>
-        <?php endforeach;?>
+        
     </div>
 </section>
