@@ -1,6 +1,6 @@
 <?php
 
-function saneem_services_section_metabox($metaboxes){
+function saneem_thinking_section_metabox($metaboxes){
     $section_id = 0;
     if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
         $section_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID'];
@@ -11,39 +11,48 @@ function saneem_services_section_metabox($metaboxes){
     $section_meta= get_post_meta($section_id,'saneem-section-type',true);
     $section_type= $section_meta['type'];
     
-    if('services'!=$section_type){
+    if('thinking'!=$section_type){
         return $metaboxes;
     }
 
     $metaboxes[] = array(
-        'id'        => 'saneem_services_sections',
-        'title'     => __( 'services Section', 'saneem' ),
+        'id'        => 'saneem_thinking_sections',
+        'title'     => __( 'Thinking Section', 'saneem' ),
         'post_type' => 'section',
         'context'   => 'normal',
         'priority'  => 'default',
         'sections'  => array(
             array(
-                'name'  => 'saneem_services_section_one',
+                'id'     => 'saneem_thinking_section_one',
+                'name'  => 'saneem_thinking_section_one',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
+                      array(
+                        'id'    => 'thinking_image',
+                        'title'   => __( 'Image', 'saneem' ),
+                        'type'    => 'image',
+                        
+                        ),
                  array(
-                        'id'              => 'services',
+                        'id'              => 'thinking',
                         'type'            => 'group',
-                        'title'           => __( 'services', 'saneem' ),
-                        'button_title'    => __( 'New services', 'saneem' ),
-                        'accordion_title' => __( 'Add New services Member', 'saneem' ),
+                        'title'           => __( 'Thinking Section Settings', 'saneem' ),
+                        'button_title'    => __( 'New Thinking', 'saneem' ),
+                        'accordion_title' => __( 'Add New Thinking Member', 'saneem' ),
                         'fields'          => array(
                           
                             array(
-                        'id'    => 'services_title',
+                        'id'    => 'thinking_title',
                         'title'   => __( 'Title', 'saneem' ),
                         'type'    => 'text',
                         
-                        ),
+                        ),   
+                            
+                      
                             
                         array(
-                        'id'    => 'services_icon',
-                        'title'   => __( 'services Icon', 'saneem' ),
+                        'id'    => 'thinking_icon',
+                        'title'   => __( 'Thinking Icon', 'saneem' ),
                         'type'    => 'select',
                         'options'=>array(
                                     'flaticon-startup'=>__('Startup','saneem'),
@@ -57,8 +66,8 @@ function saneem_services_section_metabox($metaboxes){
                         ),
    
                         array(
-                        'id'    => 'services_descriptioin',
-                        'title'   => __( 'description', 'saneem' ),
+                        'id'    => 'thinking_descriptioin',
+                        'title'   => __( 'Description', 'saneem' ),
                         'type'    => 'textarea',
                         
                         ),
@@ -78,4 +87,4 @@ function saneem_services_section_metabox($metaboxes){
     return $metaboxes;
 };
 
-add_filter('cs_metabox_options', 'saneem_services_section_metabox');
+add_filter('cs_metabox_options', 'saneem_thinking_section_metabox');

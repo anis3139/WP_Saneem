@@ -15,6 +15,7 @@ require_once( get_theme_file_path( "/inc/metaboxes/section-portfolio.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-services.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-testimonials.php" ) );
 require_once( get_theme_file_path( "/inc/metaboxes/section-faq.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/section-thinking.php" ) );
 
 
 define( 'CS_ACTIVE_FRAMEWORK', false ); // default true
