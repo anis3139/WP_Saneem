@@ -1,6 +1,7 @@
 <?php
 
 require_once( get_theme_file_path( "/widgets/social-icons-widget.php" ) );
+require_once( get_theme_file_path( "/inc/metaboxes/companion/companion-plugin.php" ) );
 require_once( get_theme_file_path( "/assets/wp_bootstrap_navlist_walker/wp_bootstrap_navlist_walker.php" ) );
 require_once( get_theme_file_path( "/lib/class-tgm-plugin-activation.php" ) );
 require_once( get_theme_file_path( "/inc/tgm.php" ) );
