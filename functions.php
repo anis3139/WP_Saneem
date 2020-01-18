@@ -227,6 +227,7 @@ add_action('wp_ajax_contact','saneem_contact_email');
 add_action('wp_ajax_nopriv_contact','saneem_contact_email');
 
 
+
 function saneem_change_nav_menu( $menus ) {
 	$string_to_replace = home_url( "/" ) . "section/";
 	if ( is_front_page() ) {

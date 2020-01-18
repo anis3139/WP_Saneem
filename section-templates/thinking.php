@@ -1,7 +1,7 @@
 <?php
-global $section_id;
-$saneem_section_meta        = get_post_meta( $section_id, 'saneem_thinking_sections', true );
-$saneem_section             = get_post( $section_id );
+global $saneem_section_id;
+$saneem_section_meta        = get_post_meta( $saneem_section_id, 'saneem_thinking_sections', true );
+$saneem_section             = get_post( $saneem_section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 $saneem_thinking_image= wp_get_attachment_image_src($saneem_section_meta['thinking_image'],'full'); 

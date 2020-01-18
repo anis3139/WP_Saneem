@@ -18,9 +18,8 @@ function saneem_section_picker_metabox($metaboxes){
         'context'   => 'normal',
         'priority'  => 'default',
         'sections'  => array(
-            array(
-                'id'     => 'saneem-page-sections-section-one',
-                'name'  => '',
+            array( 
+                'name'  => 'saneem_page_section_one',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
                     array(

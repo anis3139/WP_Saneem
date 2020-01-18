@@ -1,13 +1,13 @@
 <?php 
-global $section_id;
-$saneem_section_meta= get_post_meta($section_id,'saneem_banner_sections',true);
+global $saneem_section_id;
+$saneem_section_meta= get_post_meta($saneem_section_id,'saneem_banner_sections',true);
 $saneem_banner_image=get_template_directory_uri().'/assets/images/hero_1.jpg';
 if(isset($saneem_section_meta['banner_image'])){
 $saneem_banner_image= wp_get_attachment_image_src($saneem_section_meta['banner_image'],'full');
 }
 
 
-$saneem_section= get_post($section_id);
+$saneem_section= get_post($saneem_section_id);
 $saneem_section_title= $saneem_section->post_title;
 $saneem_section_description= $saneem_section->post_content;
 

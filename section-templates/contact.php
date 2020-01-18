@@ -1,7 +1,7 @@
 <?php
-global $section_id;
-$saneem_section_meta        = get_post_meta( $section_id, 'saneem_contact_sections', true );
-$saneem_section             = get_post( $section_id );
+global $saneem_section_id;
+$saneem_section_meta        = get_post_meta( $saneem_section_id, 'saneem_contact_sections', true );
+$saneem_section             = get_post( $saneem_section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 ?>
@@ -62,7 +62,7 @@ $saneem_section_description = $saneem_section->post_content;
                     <div class="row form-group">
 
                         <div class="col-md-12">
-                            <label class="text-black" for="subject"><?php _e('Subject','saneem')?></label>
+                            <label class="text-black" for="subject"><?php _e('Phone','saneem')?></label>
                             <input type="subject" id="subject" class="form-control">
                         </div>
                     </div>
