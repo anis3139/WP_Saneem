@@ -101,7 +101,7 @@ add_action( 'after_setup_theme', 'saneem_content_width', 0 );
 
 function saneem_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'saneem' ),
+		'name'          => esc_html__( 'Single page Sidebar', 'saneem' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'saneem' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -298,10 +298,10 @@ if ( ! function_exists( "saneem_about_page_template_banner" ) ) {
 
 
 
-function philosophy_search_form( $form ) {
+function saneem_search_form( $form ) {
     $homedir      = home_url( "/" );
-    $label        = __( "Search for:", "philosophy" );
-    $button_label = __( "Search", "philosophy" );
+    $label        = __( "Search for:", "saneem" );
+    $button_label = __( "Search", "saneem" );
     $newform = <<<FORM
 <form role="search" method="get" class="header__search-form" action="{$homedir}">
     <label>
@@ -318,10 +318,10 @@ FORM;
 }
 
 
-add_filter( "get_search_form", "philosophy_search_form" );
+add_filter( "get_search_form", "saneem_search_form" );
 
 
-function alpha_highlight_search_results( $text ) {
+function saneem_highlight_search_results( $text ) {
     if ( is_search() ) {
         $pattern = '/(' . join( '|', explode( ' ', get_search_query() ) ) . ')/i';
         $text    = preg_replace( $pattern, '<span class="search-highlight">\0</span>', $text );
@@ -330,6 +330,6 @@ function alpha_highlight_search_results( $text ) {
     return $text;
 }
 
-add_filter( 'the_content', 'alpha_highlight_search_results' );
-add_filter( 'the_excerpt', 'alpha_highlight_search_results' );
-add_filter( 'the_title', 'alpha_highlight_search_results' );
+add_filter( 'the_content', 'saneem_highlight_search_results' );
+add_filter( 'the_excerpt', 'saneem_highlight_search_results' );
+add_filter( 'the_title', 'saneem_highlight_search_results' );
