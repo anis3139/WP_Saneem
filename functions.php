@@ -41,6 +41,15 @@ function saneem_setup() {
 	load_theme_textdomain( 'saneem', get_template_directory() . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
+    $saneem_custom_header_details = array(
+        'header-text'        => true,
+        'default-text-color' => '#222',
+        'width'              => 1200,
+        'height'             => 600,
+        'flex-height'        => true,
+        'flex-width'         => true,
+    );
+    add_theme_support( "custom-header", $saneem_custom_header_details );
 
 	
 	add_theme_support( 'title-tag' );
@@ -60,7 +69,12 @@ function saneem_setup() {
 		'caption',
 		'comment-list',
 	) );
-    add_theme_support( 'custom-logo' );
+    $saneem_custom_logo_defaults = array(
+        "width"  => '100px',
+        "height" => '60px'
+    );
+    add_theme_support( "custom-logo", $saneem_custom_logo_defaults );
+
     
 	add_theme_support( 'custom-background', apply_filters( 'saneem_custom_background_args', array(
 		'default-color' => 'ffffff',
@@ -69,7 +83,7 @@ function saneem_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
+    add_image_size( 'saneem-team-image', 500, 500,array('center','center'), true); 
 
 }
 
@@ -94,7 +108,16 @@ function saneem_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) )
+	) );
+    register_sidebar( array(
+		'name'          => esc_html__( 'Blog Sidebar', 'saneem' ),
+		'id'            => 'sidebar-blog',
+		'description'   => esc_html__( 'Add widgets here.', 'saneem' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
         
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar one', 'saneem' ),
@@ -104,7 +127,7 @@ function saneem_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
 		'after_title'   => '</h3>',
-	) )
+	) );
     
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar Two', 'saneem' ),
@@ -114,7 +137,7 @@ function saneem_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
 		'after_title'   => '</h3>',
-	) )
+	) );
         
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar three', 'saneem' ),
@@ -124,7 +147,7 @@ function saneem_widgets_init() {
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="footer-heading mb-4 widget-title">',
 		'after_title'   => '</h3>',
-	) )
+	) );
         
         ;register_sidebar( array(
 		'name'          => esc_html__( 'Footer Sidebar four', 'saneem' ),
@@ -204,7 +227,7 @@ function saneem_csf_init(){
 }
 add_action('init', 'saneem_csf_init');
 
-
+add_filter('wp_calculate_image_srcset','__return_null');
 
 function saneem_contact_email(){
 	if(check_ajax_referer('contact','cn')) {
@@ -246,3 +269,67 @@ function saneem_change_nav_menu( $menus ) {
 }
 
 add_filter( 'wp_nav_menu_objects', 'saneem_change_nav_menu' );
+
+
+if ( ! function_exists( "saneem_about_page_template_banner" ) ) {
+    function saneem_about_page_template_banner() {
+       
+
+        if ( is_front_page() ) {
+            if ( current_theme_supports( "custom-header" ) ) {
+                ?>
+<style>
+    .header {
+        background-image: url(<?php header_image();
+        ?>);
+        background-size: cover;
+        margin-bottom: 50px;
+    }
+
+</style>
+<?php
+            }
+        }
+    }
+
+    add_action( "wp_head", "saneem_about_page_template_banner", 11 );
+}
+
+
+
+
+function philosophy_search_form( $form ) {
+    $homedir      = home_url( "/" );
+    $label        = __( "Search for:", "philosophy" );
+    $button_label = __( "Search", "philosophy" );
+    $newform = <<<FORM
+<form role="search" method="get" class="header__search-form" action="{$homedir}">
+    <label>
+        <span class="hide-content">{$label}</span>
+        <input type="search" class="form-control" placeholder="Type Keywords" value="" name="s"
+               title="{$label}" autocomplete="off">
+    </label>
+    {$post_type}
+    <input type="submit" class="btn btn-primary btn-sm" value="{$button_label}">
+</form>
+FORM;
+
+    return $newform;
+}
+
+
+add_filter( "get_search_form", "philosophy_search_form" );
+
+
+function alpha_highlight_search_results( $text ) {
+    if ( is_search() ) {
+        $pattern = '/(' . join( '|', explode( ' ', get_search_query() ) ) . ')/i';
+        $text    = preg_replace( $pattern, '<span class="search-highlight">\0</span>', $text );
+    }
+
+    return $text;
+}
+
+add_filter( 'the_content', 'alpha_highlight_search_results' );
+add_filter( 'the_excerpt', 'alpha_highlight_search_results' );
+add_filter( 'the_title', 'alpha_highlight_search_results' );

@@ -15,7 +15,7 @@ $saneem_section_description= $saneem_section->post_content;
 
 
 
-<div class="site-blocks-cover overlay" style="background-image: url(<?php echo esc_url( $saneem_banner_image[0]);?>);" data-aos="fade" id="home-section">
+<div class="site-blocks-cover header overlay" style="background-image: url(<?php echo esc_url( $saneem_banner_image[0]);?>);" data-aos="fade" id="home-section">
     <div class="container">
         <div class="row align-items-center justify-content-center">
              <div class="col-md-8 mt-lg-5 text-center">

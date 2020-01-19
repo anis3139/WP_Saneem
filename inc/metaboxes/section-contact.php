@@ -44,7 +44,13 @@ function saneem_contact_section_metabox($metaboxes){
                         'title'   => __( 'Email', 'saneem' ),
                         'type'    => 'text',
                         
-                        )
+                        ),
+                    array(
+                        'id'    => 'contact_form_shortcode',
+                        'title'   => __( 'Contact Form Shortcode', 'saneem' ),
+                        'type'    => 'textarea',
+                        
+                        ),
                     ),
                 )
             ),

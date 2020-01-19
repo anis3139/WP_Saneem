@@ -3,6 +3,7 @@
 
 <head>
     <?php wp_head(); ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 
@@ -26,7 +27,15 @@
                 <div class="row align-items-center">
 
                     <div class="col-6 col-xl-2">
-                        <h1 class="mb-0 site-logo"><a href="<?php echo site_url();?>" class="mb-0"><?php _e("Saneem","saneem");?></a></h1>
+                        <h1 class="mb-0 site-logo"><a href="<?php echo site_url();?>" class="mb-0">
+
+                                <?php if(has_custom_logo()){
+                  the_custom_logo();
+                }else{
+                    echo "<h1><a href='".home_url("/")."'>".get_bloginfo('name')."</a></h1>";
+                }
+                ?>
+                            </a></h1>
                     </div>
 
                     <div class="col-12 col-md-10 d-none d-xl-block">

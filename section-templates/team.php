@@ -31,7 +31,7 @@ $saneem_section_description = $saneem_section->post_content;
          <div class="row">
             <?php 
              foreach($saneem_teams as $saneem_team):
-             $saneem_members_image = wp_get_attachment_image_src( $saneem_team['member_image'], 'medium' );
+             $saneem_members_image = wp_get_attachment_image_src( $saneem_team['member_image'], 'saneem-team-image' );
              ?>
              <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="">
                  <div class="team-member">

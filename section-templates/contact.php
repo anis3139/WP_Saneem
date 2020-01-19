@@ -37,8 +37,18 @@ $saneem_section_description = $saneem_section->post_content;
         </div>
         <div class="row">
             <div class="col-md-12 mb-5">
-
-
+               <!-- <form action="#" class="p-5 bg-white">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <h2 class="h4 text-black mb-5"><?php _e('Contact Form','saneem');?></h2>
+                            <?php 
+                       if($saneem_section_meta['contact_form_shortcode']){
+                       echo do_shortcode($saneem_section_meta['contact_form_shortcode']);
+                            };
+                        ?>
+                        </div>
+                    </div>
+                </form>-->
 
                 <form action="#" class="p-5 bg-white">
                     <?php wp_nonce_field('contact','contact');?>

@@ -32,6 +32,7 @@ function saneem_register_my_cpts_section() {
 		"menu_position" => 5,
 		"menu_icon" => "dashicons-book-alt",
 		"supports" => [ "title", "editor", "thumbnail","excerpt" ],
+        "taxonomies"=>array('category'),
 	];
 
 	register_post_type( "section", $args );
