@@ -209,5 +209,106 @@ th {
     font-weight: bold;
 }
 
+--------------------------------
+/* comments section custom css */
+------------------------------------
+
+/*coment form*/
+
+
+.comment-form-wrap{
+        background: #F8F9FA;
+}
+
+.comment-form-wrap> h3{
+    padding-left: 10px;
+}
+
+
+.comment-reply-title{
+    padding-left: 10px;
+}
+
+.comment-form-comment textarea {
+    overflow: auto;
+    width: 100%;
+    border-radius: 20px;
+}
+.comment-form p{
+    padding: 3%;
+}
+
+
+.comment-form-author> input{
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+.comment-form-author> level{
+    font-size: 20px;
+}
+
+
+.comment-form-email> input{
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+.comment-notes #email-notes{
+    padding-left: 10px;
+}
+
+
+.comment-form-url> input{
+    padding: 15px;
+    line-height: normal;
+    border-radius: 30px;
+    width: 100%;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.form-submit .submit{
+    background: #007bff;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    padding: 10px;
+   
+    
+}
+
+/*Comment list*/
+
+.comment-list li .comment-body .reply {
+    padding: 5px 10px;
+    background: #e6e6e6;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0px 0px 0px 80%;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+.comment-list li .comment-body .reply a{
+    color: black;
+}
+
+.comment-body> .comment-content{
+     
+     text-align: left;
+    color:  black;
+}
+.comment-body> .comment-author{
+    margin-right: 20px;
+}
+
+
 
 

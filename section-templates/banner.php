@@ -19,8 +19,8 @@ $saneem_section_description= $saneem_section->post_content;
     <div class="container">
         <div class="row align-items-center justify-content-center">
              <div class="col-md-8 mt-lg-5 text-center">
-                 <h1 class="text-uppercase mb-5" data-aos="fade-up">
-                <?php echo esc_html($saneem_section_meta['Site_description']); ?>
+                 <h1 class="text-uppercase mb-5" data-aos="fade-up" data-aos-delay="300">
+                <?php bloginfo( 'description' ); ?>
                  </h1>
                 
                 <div data-aos="fade-up" data-aos-delay="100">

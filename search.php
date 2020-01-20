@@ -39,6 +39,7 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
                 <div class="col-md-12 text-center">
                     <h4>
                         <?php _e('No result found','saneem'); ?>
+                        
                     </h4>
                 </div>
             </div>

@@ -1,3 +1,10 @@
+ <?php
+/**
+ * Template Name: Blog Page
+ */
+?>
+
+
 <?php get_header();?>
 <?php 
 $saneem_layout_class="col-md-8";
@@ -17,7 +24,7 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
         <div class="row align-items-center justify-content-center">
             <div class="col-md-9 mt-lg-5 text-center">
                 <h1><?php the_title();?></h1>
-                <p class="post-meta"><a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a> &bull; <?php echo _e('Posted by','saneem');?> <a href="#"> <?php echo the_author();?></a></p>
+                <p class="post-meta"><a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a> &bull; <?php echo _e('Posted by','saneem');?> <a href="#"> <?php echo the_author_posts_link();?></a></p>
             </div>
         </div>
     </div>
@@ -61,7 +68,7 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
                         ?>
                                 </a>
                                 <h2 class="font-size-regular"><a href="<?php the_permalink(); ?>"><?php echo the_title();?></a></h2>
-                                <div class="meta mb-4"><a href="<?php the_author_posts_link()?>"><?php echo the_author();?></a> <span class="mx-2">&bullet;</span> <a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a><span class="mx-2">&bullet;</span> <a href="#"><?php echo get_the_tag_list("<span>",",&nbsp","</span>");?></a></div>
+                                <div class="meta mb-4"><em><?php echo the_author_posts_link();?></em><span class="mx-2">&bullet;</span> <a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a><span class="mx-2">&bullet;</span> <a href="#"><?php echo get_the_tag_list("<span>",",&nbsp","</span>");?></a></div>
                                 <p><?php the_excerpt();?></p>
                                 <p><a href="<?php the_permalink();?>"><?php _e('Continue Reading...','saneem');?></a></p>
                             </div>

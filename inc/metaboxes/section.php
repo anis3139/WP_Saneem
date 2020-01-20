@@ -25,7 +25,7 @@ function saneem_section_type_metabox( $metaboxes ) {
                             'pricing'     => __( 'Pricing', 'saneem' ),
                             'faq'  => __( 'FAQ', 'saneem' ),
                             'thinking' => __( 'Thinking', 'saneem' ),
-                            'blog' => __( 'Blog', 'saneem' ),
+                            'blog-section' => __( 'Blog Section', 'saneem' ),
                             'contact'      => __( 'Contact', 'saneem' ),
                         )
                     ),

@@ -45,12 +45,6 @@ function saneem_banner_section_metabox($metaboxes){
                         'type'    => 'text',
                         
                         ),
-                    array(
-                        'id'    => 'Site_description',
-                        'title'   => __( 'Site Description', 'saneem' ),
-                        'type'    => 'text',
-                        
-                        )
                     ),
                 )
             ),
