@@ -12,7 +12,7 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
 
             <div class="col-md-9 mt-lg-5 text-center">
                 <h1><?php the_title();?></h1>
-                <p class="post-meta"><?php echo get_the_date();?> &bull; <?php echo _e('Posted by:','saneem');?> <a href="#"> <?php echo get_the_author_meta( "display_name" ); ?></a></p>
+                <p class="post-meta"><a href="<?php the_permalink();?>"><?php echo get_the_date();?></a></p>
 
             </div>
 
@@ -93,6 +93,7 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
                 </div>
 
                 <div class="sidebar-box">
+                   <h3 class="text-primary"><b><?php echo _e('Posted by','saneem');?></b></h3>
                     <?php echo get_avatar( get_the_author_meta( "ID"));?>
                     <h3><?php echo get_the_author_meta( "display_name" ); ?></h3>
                     <p><?php echo get_the_author_meta( "description" ); ?></p>

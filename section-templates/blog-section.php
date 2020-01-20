@@ -19,13 +19,13 @@ $saneem_section_description = $saneem_section->post_content;
 
         <div class="row">
             <?php
-    $philosophy_popular_posts = new WP_Query( array(
+    $saneem_popular_posts = new WP_Query( array(
         'posts_per_page'      => 3,
         'ignore_sticky_posts' => 1,
         'orderby'             => "comment_count"
     ) );
-    while ( $philosophy_popular_posts->have_posts() ) {
-        $philosophy_popular_posts->the_post();
+    while ( $saneem_popular_posts->have_posts() ) {
+        $saneem_popular_posts->the_post();
     ?>
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
                 <div class="h-entry">
