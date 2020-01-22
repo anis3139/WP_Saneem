@@ -7,7 +7,7 @@ $saneem_section_description = $saneem_section->post_content;
 ?>
 
 
-<div class="row site-section" id="faq-section">
+<div class="row site-section" id="<?php echo esc_attr($saneem_section->post_name);?>">
     <div class="col-12 text-center" data-aos="fade">
         <h2 class="section-title"><?php echo esc_html($saneem_section_title);?></h2>
     </div>

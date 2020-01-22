@@ -49,7 +49,13 @@ function saneem_contact_section_metabox($metaboxes){
                         'id'    => 'contact_form_shortcode',
                         'title'   => __( 'Contact Form Shortcode', 'saneem' ),
                         'type'    => 'textarea',
-                        
+                        'default' => 'Please Drop Here Your Contact Form Short Code'
+                        ),
+                    array(
+                          'id'      => 'gmap',
+                          'type'    => 'textarea',
+                          'title'   => __( 'Google Map', 'saneem' ),
+                          'default' => 'Please Drop Here Your Google Map HTML Code'
                         ),
                     ),
                 )

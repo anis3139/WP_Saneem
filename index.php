@@ -1,3 +1,4 @@
+
 <?php get_header();?>
 <?php 
 $saneem_layout_class="col-md-8";
@@ -7,21 +8,9 @@ if(!is_active_sidebar("sidebar-blog")){
     $saneem_layout_class_second="col-md-4 col-lg-4 mb-4 mb-lg-4";
 };
 
-$saneem_featured_image = get_the_post_thumbnail_url(null, "large");
 ?>
+<?php get_template_part("template-parts/hero");?>
 
-
-
-<div class="site-blocks-cover overlay" style="background-image: url(<?php echo $saneem_featured_image;?>);" data-aos="fade">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-9 mt-lg-5 text-center">
-                <h1><?php the_title();?></h1>
-                <p class="post-meta"><a href="<?php the_permalink(); ?>"><?php echo get_the_date();?></a> &bull; <?php echo _e('Posted by','saneem');?> <a href="#"> <?php echo the_author_posts_link();?></a></p>
-            </div>
-        </div>
-    </div>
-</div>
 <?php ?>
 <div class="container single-page">
     <div class="row">
@@ -42,8 +31,20 @@ $saneem_featured_image = get_the_post_thumbnail_url(null, "large");
             <section <?php post_class();?> class="site-section" id="blog-section">
                 <div class="container">
                     <div class="row mb-5">
-                        <div class="col-12 text-center" data-aos="fade">
+                        <div class="col-md-12 text-center" data-aos="fade">
                             <h2 class="section-title mb-3"><?php _e('Our Blog','saneem');?></h2>
+                        </div>
+                        <div class="col-md-12 sidebar-box text-center">
+                            <?php
+                                if(is_search()){
+                            ?>
+                            <h3><?php _e("You searched for","saneem") ?>: <?php the_search_query(); ?></h3>
+                            <?php
+                                }
+                                ?>
+                            <?php
+                                echo get_search_form();
+                            ?>
                         </div>
                     </div>
                     <div class="row">

@@ -1,4 +1,4 @@
-<section class="site-section bg-light" id="pricing-section">
+<section class="site-section bg-light" id="<?php echo esc_attr($saneem_section->post_name);?>">
      <div class="container">
          <div class="row mb-5">
              <div class="col-12 text-center" data-aos="fade-up">

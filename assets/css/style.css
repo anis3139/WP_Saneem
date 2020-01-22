@@ -627,6 +627,10 @@ body:after {
       .circle-bg:after {
         bottom: 0px;
         right: -90px; } }
+    @media (max-width: 572px) {
+      .circle-bg:after {
+        top: 50px;
+        right: -90px; } }
 
 .site-block-subscribe .btn {
   padding-left: 20px;

@@ -61,11 +61,7 @@ function philosophy_register_required_plugins() {
 
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        array(
-            'name'     => 'Advanced Custom Fields',
-            'slug'     => 'advanced-custom-fields',
-            'required' => false,
-        ),
+      
       
         array(
             'name'     => 'Contact Form 7',
@@ -73,8 +69,8 @@ function philosophy_register_required_plugins() {
             'required' => false,
         ),
         array(
-            'name'     => 'Companion plugin',
-            'slug'     => 'https://github.com/anis3139/companion-plugin/archive/master.zip',
+            'name'     => 'attachments',
+            'slug'     => 'attachments',
             'required' => false,
         ),
 

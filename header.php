@@ -29,7 +29,7 @@
                     <div class="col-6 col-xl-2">
                         <h1 class="mb-0 site-logo"><a href="<?php echo site_url();?>" class="mb-0">
 
-                                <?php if(has_custom_logo()){
+                <?php if(has_custom_logo()){
                   the_custom_logo();
                 }else{
                     echo "<h1><a href='".home_url("/")."'>".get_bloginfo('name')."</a></h1>";
@@ -44,8 +44,7 @@
 		                          echo wp_nav_menu( array(
 		                          	'location' => 'primary',
                                       'menu-id'=>'topmenu',
-                                    'menu_class'=>'site-menu main-menu js-clone-nav mr-auto d-none d-lg-block',
-                                      'walker'=>new WP_Bootstrap_Navwalker(),
+                                    'menu_class'=>'site-menu main-menu js-clone-nav mr-auto d-none d-lg-block $zindex-dropdown text-dark',
 		                          ) );
 		                      ?>
 
@@ -53,7 +52,8 @@
                     </div>
 
 
-                    <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+                    <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
+                    </div>
 
                 </div>
             </div>

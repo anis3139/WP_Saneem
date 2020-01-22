@@ -4,13 +4,12 @@ Theme URI:
 Author: Anis Arronno
 Author URI:
 Description:  One page Template
-Version: 1.0.1
+Version: 1.0.55
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: Saneem
 Tags: blog, one-colum, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, custom-background, e-commerce, theme-options, sticky-post, full-width-template
 */
-
 /* --------------------------------------------------------------
 # Normalize Typograpy
 --------------------------------------------------------------*/
@@ -187,45 +186,60 @@ th {
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+.site-logo>h1{
+        font-weight: 900;
+}
+.site-description{
+        font-weight: 900;
+}
 
-.saneem-custom-padding{
+
+
+.saneem-custom-padding {
     padding: 10%;
 }
-.pagination{
+
+.pagination {
     border-top: 3px solid #E7EAED;
-    padding-top:30px;
+    padding-top: 30px;
     margin-bottom: 30px;
 }
-.single-page{
+
+.single-page {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.margin-top{
+
+.margin-top {
     margin-top: 100px;
 }
 
-.search-highlight{
+.search-highlight {
     background-color: #ff0;
     font-weight: bold;
 }
+.header__search-form .hide-content{
+    position: absolute;
+    left:-9999px;
+} 
 
+.h-entry>p{
+    text-align: justify;
+}
 --------------------------------
 /* comments section custom css */
 ------------------------------------
 
 /*coment form*/
-
-
-.comment-form-wrap{
-        background: #F8F9FA;
+.comment-form-wrap {
+    background: #F8F9FA;
 }
 
-.comment-form-wrap> h3{
+.comment-form-wrap > h3 {
     padding-left: 10px;
 }
 
-
-.comment-reply-title{
+.comment-reply-title {
     padding-left: 10px;
 }
 
@@ -234,36 +248,36 @@ th {
     width: 100%;
     border-radius: 20px;
 }
-.comment-form p{
+
+.comment-form p {
     padding: 3%;
 }
 
-
-.comment-form-author> input{
+.comment-form-author > input {
     padding: 15px;
     line-height: normal;
     border-radius: 30px;
     width: 100%;
     box-shadow: inset 0px 0px 1px 1px white;
 }
-.comment-form-author> level{
+
+.comment-form-author > level {
     font-size: 20px;
 }
 
-
-.comment-form-email> input{
+.comment-form-email > input {
     padding: 15px;
     line-height: normal;
     border-radius: 30px;
     width: 100%;
     box-shadow: inset 0px 0px 1px 1px white;
 }
-.comment-notes #email-notes{
+
+.comment-notes #email-notes {
     padding-left: 10px;
 }
 
-
-.comment-form-url> input{
+.comment-form-url > input {
     padding: 15px;
     line-height: normal;
     border-radius: 30px;
@@ -271,7 +285,7 @@ th {
     box-shadow: inset 0px 0px 1px 1px white;
 }
 
-.form-submit .submit{
+.form-submit .submit {
     background: #007bff;
     color: #fff;
     font-size: 30px;
@@ -279,36 +293,53 @@ th {
     border: 1px solid #007bff;
     border-radius: 20px;
     padding: 10px;
-   
-    
 }
 
 /*Comment list*/
+@media only screen and (max-width:620px) {
 
-.comment-list li .comment-body .reply {
+    /* For mobile phones: */
+    .comment-list li .comment-body .reply {
+        background: #E3E3E3;
+        color: #000;
+        text-transform: uppercase;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width:620px) {
+    .comment-list li .comment-body .reply{
     padding: 5px 10px;
-    background: #e6e6e6;
+    background: #E3E3E3;
     color: #000;
     text-transform: uppercase;
-    font-size: 14px;
     margin: 0px 0px 0px 80%;
     border-radius: 20px;
     font-size: 20px;
-    text-align: center;
+    text-align: center;}
 }
-.comment-list li .comment-body .reply a{
+
+.comment-list li .comment-body .reply a {
     color: black;
 }
 
-.comment-body> .comment-content{
-     
-     text-align: left;
-    color:  black;
+.comment-content {
+    text-align: left;
+    color: black;
+     margin-right: 20px;
+    padding: 20px;
 }
-.comment-body> .comment-author{
+
+.comment-author {
     margin-right: 20px;
+    padding: 20px;
 }
 
+.comment-metadata {
+     margin-right: 20px;
+    padding: 20px;
+}
 
-
-
+--------------------------------
+/* testimonial section custom css */
+------------------------------------

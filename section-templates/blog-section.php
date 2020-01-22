@@ -7,7 +7,7 @@ $saneem_section_description = $saneem_section->post_content;
 
 
 
-<section class="site-section" id="blog-section">
+<section class="site-section" id="<?php echo esc_attr($saneem_section->post_name);?>">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center" data-aos="fade">
@@ -47,4 +47,4 @@ $saneem_section_description = $saneem_section->post_content;
    wp_reset_query();
 ?>
         </div>
-    </div
+    </div>

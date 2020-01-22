@@ -35,13 +35,13 @@ function saneem_banner_section_metabox($metaboxes){
                         ),
                     array(
                         'id'    => 'button_title',
-                        'title'   => __( 'Banner Title', 'saneem' ),
+                        'title'   => __( 'Button Title', 'saneem' ),
                         'type'    => 'text',
                         
                         ),
                     array(
                         'id'    => 'button_target',
-                        'title'   => __( 'Banner Terget', 'saneem' ),
+                        'title'   => __( 'Button Terget', 'saneem' ),
                         'type'    => 'text',
                         
                         ),

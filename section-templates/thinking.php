@@ -6,7 +6,7 @@ $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 $saneem_thinking_image= wp_get_attachment_image_src($saneem_section_meta['thinking_image'],'full'); 
 ?>
-<section class="site-section" id="about-section">
+<section class="site-section" id="<?php echo esc_attr($saneem_section->post_name);?>">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center" data-aos="fade">
@@ -36,7 +36,7 @@ $saneem_thinking_image= wp_get_attachment_image_src($saneem_section_meta['thinki
                             <div>
                                 <h3><?php echo esc_html($saneem_thinking['thinking_title']); ?></h3>
                                 <p><?php echo esc_html($saneem_thinking['thinking_descriptioin']); ?></p>
-                                <p class="mb-0"><a href="#">Learn More</a></p>
+                                <p class="mb-0"><a href="<?php the_permalink();?>"><?php _e('Learn More', 'saneem');?></a></p>
                             </div>
                         </div>
                     </div>

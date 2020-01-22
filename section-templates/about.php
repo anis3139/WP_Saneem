@@ -9,7 +9,7 @@ $saneem_about_image= wp_get_attachment_image_src($saneem_section_meta['about_ima
 ?>
 
     
-    <div class="site-section cta-big-image" id="about-section">
+    <div class="site-section cta-big-image" id="<?php echo esc_attr($saneem_section->post_name);?>">
      <div class="container">
          <div class="row mb-5">
              <div class="col-12 text-center" data-aos="fade">

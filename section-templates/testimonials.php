@@ -6,7 +6,7 @@ $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 ?>
  <div class="saneem-custom-padding">
-    <section class="site-section testimonial-wrap" id="testimonials-section" data-aos="fade">
+    <section class="site-section testimonial-wrap" id="<?php echo esc_attr($saneem_section->post_name);?>" data-aos="fade">
      <div class="container">
          <div class="row mb-5">
              <div class="col-12 text-center">

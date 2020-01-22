@@ -1,19 +1,24 @@
 ;(function($){
     $(document).ready(function(){
-        $("#send-massage").on('click',function(){
-
+        $("#send-message").on('click',function(){
             $.post(saneem_url.ajaxurl,{
                 action:'contact',
                 cn:$('#contact').val(),
-                name:$('#name').val(),
-                email:$('#email').val(),
-                subject:$('#subject').val(),
-                message:$('#message').val(),
+                name:$('#cname').val(),
+                email:$('#cemail').val(),
+                phone:$('#cphone').val(),
+                message:$('#cmessage').val(),
             },function(data){
-                console.log(data);
+                if('successful'== data){
+                    alert('Message Send Successfully')
+                }else{
+                    alert('Message Send Failed')
+                }
             });
 
             return false;
         })
+        
     });
 })(jQuery);
+

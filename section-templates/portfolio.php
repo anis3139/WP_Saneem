@@ -5,7 +5,7 @@ $saneem_section             = get_post( $saneem_section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 ?>
-<section class="site-section" id="portfolio-section">
+<section class="site-section" id="<?php echo esc_attr($saneem_section->post_name);?>">
     <div class="container">
         <div class="row mb-3">
             <div class="col-12 text-center" data-aos="fade">

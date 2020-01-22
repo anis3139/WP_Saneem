@@ -5,7 +5,7 @@ $saneem_section             = get_post( $saneem_section_id );
 $saneem_section_title       = $saneem_section->post_title;
 $saneem_section_description = $saneem_section->post_content;
 ?>
- <section class="site-section border-bottom bg-light" id="services-section">
+ <section class="site-section border-bottom bg-light" id="<?php echo esc_attr($saneem_section->post_name);?>">
      <div class="container">
          <div class="row mb-5">
              <div class="col-12 text-center" data-aos="fade">
@@ -24,7 +24,7 @@ $saneem_section_description = $saneem_section->post_content;
                      <div>
                       <h3><?php echo esc_html($saneem_service['services_title']); ?></h3>
                         <?php echo apply_filters('the_content',$saneem_service['services_descriptioin']); ?>
-                         <p><a href="#">Learn More</a></p>
+                         <p><a href="<?php the_permalink();?>"><?php _e('Learn More', 'saneem');?></a></p>
                      </div>
                  </div>
              </div>

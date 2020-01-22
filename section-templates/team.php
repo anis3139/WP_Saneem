@@ -9,7 +9,7 @@ $saneem_section_description = $saneem_section->post_content;
     
 
     
-    <section class="site-section border-bottom" id="team-section">
+    <section class="site-section border-bottom" id="<?php echo esc_attr($saneem_section->post_name);?>">
      <div class="container">
          <div class="row mb-5 justify-content-center">
              <div class="col-md-8 text-center">

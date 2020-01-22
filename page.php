@@ -1,22 +1,8 @@
 <?php get_header();?>
 
-<?php 
-$saneem_featured_image = get_the_post_thumbnail_url(null, "large");
-?>
-
-<div class="site-blocks-cover overlay" style="background-image: url(<?php echo $saneem_featured_image;?>);" data-aos="fade">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
+<?php get_template_part("template-parts/hero");?>
 
 
-            <div class="col-md-9 mt-lg-5 text-center">
-                <h1><?php the_title();?></h1>
-               
-            </div>
-
-        </div>
-    </div>
-</div>
 <div class="container single-page">
     <div class="row">
         <div class="col-md-12">
